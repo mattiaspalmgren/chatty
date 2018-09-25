@@ -19,6 +19,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "regenerator-runtime": "^0.12.1",

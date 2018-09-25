@@ -10,11 +10,22 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        options: { presets: ["@babel/env"] }
+        options: { presets: ["@babel/env"] },
+        include: __dirname + '/src',
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [
+                { loader: "style-loader" },
+                {
+                  loader: "css-loader",
+                  options: {
+                    sourceMap: true,
+                    modules: true,
+                    localIdentName: "[local]___[hash:base64:5]"
+                  }
+                }
+        ]
       }
     ]
   },
