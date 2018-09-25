@@ -1,0 +1,12 @@
+:root {
+    --small-spacing: 10px;
+    --medium-spacing: 20px;
+}
+
+.padding-medium {
+    padding: var(--medium-spacing);
+}
+
+.padding-small {
+    padding: var(--small-spacing);
+}
