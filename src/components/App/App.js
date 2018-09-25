@@ -1,13 +1,15 @@
 import React, { Component} from "react";
 import { hot } from "react-hot-loader";
 
-import "./App.css";
+import style from "./App.css";
+import User from "../User/User.js";
 
 class App extends Component{
   render(){
     return(
-      <div className="App">
-        <h1> Hello, World! </h1>
+      <div className={style.App}>
+        <h1>Chatty</h1>
+        <User/>
       </div>
     );
   }
