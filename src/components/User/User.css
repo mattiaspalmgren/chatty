@@ -1,0 +1,5 @@
+.User {
+    composes: padding-medium from "../../utils/utils.css";
+    border: 1px solid gainsboro;
+    width: 30%;
+}

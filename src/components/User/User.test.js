@@ -1,0 +1,16 @@
+import React from 'react';
+import ShallowRenderer from 'react-test-renderer/shallow';
+import User from './User.js';
+
+it('render user shallow correctly', () => {
+  const user = {
+    name: "Alice",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." + 
+    " Donec ligula arcu, mollis at consectetur sit amet, porta gravida" + 
+    " ligula. Aenean pellentesque lobortis urna."
+  };
+  const renderer = new ShallowRenderer();
+  renderer.render(<User user={user} />);
+  const tree = renderer.getRenderOutput();
+  expect(tree).toMatchSnapshot();
+});
