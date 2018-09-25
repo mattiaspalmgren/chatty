@@ -1,0 +1,10 @@
+.Button {
+    composes: padding-small from "../../utils/utils.css";
+    background-color: gainsboro;
+    width: 100%;
+}
+
+.hovered {
+    composes: Button;
+    background-color: darkgray;
+}
