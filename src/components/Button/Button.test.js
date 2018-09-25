@@ -1,21 +1,14 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { shallow } from 'enzyme';
 import Button from "./Button.js";
 
 test("Button changes class when hovered", () => {
-    const component = renderer.create(<Button/>);
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const component = shallow(<Button/>);
+    expect(component).toMatchSnapshot();
 
-    // manually trigger the callback
-    tree.props.onMouseEnter();
-    // re-rendering
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    component.simulate('mouseenter');
+    expect(component.state("class")).toBe("hovered");
 
-    // manually trigger the callback
-    tree.props.onMouseLeave();
-    // re-rendering
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    component.simulate('mouseleave');
+    expect(component.state("class")).toBe("Button");
 })
