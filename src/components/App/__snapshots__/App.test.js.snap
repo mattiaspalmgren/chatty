@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render user shallow correctly 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Chatty
+  </h1>
+  <User />
+</div>
+`;
