@@ -1,5 +1,5 @@
 .Button {
-    composes: padding-small from "../../utils/utils.css";
+    composes: padding-small from "../../common/layout.css";
     background-color: gainsboro;
     width: 100%;
 }

@@ -1,0 +1,30 @@
+:root {
+    --small-spacing: 10px;
+    --medium-spacing: 20px;
+}
+
+/* Padding */
+.padding-medium {
+    padding: var(--medium-spacing);
+}
+
+.padding-small {
+    padding: var(--small-spacing);
+}
+
+/* Margin */
+.margin-medium {
+    margin: var(--medium-spacing);
+}
+
+.margin-small {
+    margin: var(--small-spacing);
+}
+
+.margin-vertical-small {
+    margin: var(--small-spacing) 0;
+}
+
+.margin-bottom-small {
+    margin: 0 0 var(--small-spacing) 0;
+}
