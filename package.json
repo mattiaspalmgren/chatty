@@ -8,13 +8,19 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "test": "jest --config jest.config.json"
+    "test": "jest --config jest.config.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^4.0.0-alpha.16",
+    "@storybook/addon-links": "^4.0.0-alpha.16",
+    "@storybook/addons": "^4.0.0-alpha.16",
+    "@storybook/react": "^4.0.0-alpha.16",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
@@ -22,7 +28,6 @@
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "react-test-renderer": "^16.5.2",
