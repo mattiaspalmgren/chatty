@@ -1,0 +1,12 @@
+@import "../../common/border.css";
+
+.form {
+    composes: padding-medium from "../../common/layout.css";
+    border: var(--dark-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    composes: margin-bottom-small padding-small from "../../common/layout.css";
+}
