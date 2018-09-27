@@ -1,10 +1,14 @@
+@import "../../common/color.css";
+@import "../../common/border.css";
+
 .Button {
     composes: padding-small from "../../common/layout.css";
-    background-color: gainsboro;
-    width: 100%;
+    composes: on-hover-border from "../../common/hover.css";
+    border: var(--dark-border);
+    background-color: var(--gray);
 }
 
-.hovered {
+.error {
     composes: Button;
-    background-color: darkgray;
+    background-color: var(--error);
 }

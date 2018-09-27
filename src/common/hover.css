@@ -1,0 +1,5 @@
+@import "../common/border.css";
+
+.on-hover-border:hover {
+    border: var(--black-border);
+}
