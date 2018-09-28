@@ -9,10 +9,10 @@ const InputForm = ({ inputForm }) => (
         <h2 className={style.title}>{inputForm.title}</h2>
         {
             inputForm.fields.map(field => (
-                <input key={field} className={style.field} type="text" name={field} placeholder={field}></input>
+                <input key={field} className={style.field} type="text" name={field} placeholder={field}/>
             ))
         }
-        <Button text="Submit"></Button>
+        <Button text="Submit" onSubmit={inputForm.onSubmit}></Button>
     </form>
 );
 
