@@ -4,9 +4,64 @@ exports[`render user shallow correctly 1`] = `
 <div
   className="App"
 >
-  <h1>
-    Chatty
-  </h1>
-  <User />
+  <Header />
+  <div
+    className="gridColumns"
+  >
+    <div>
+      <InputForm
+        inputForm={
+          Object {
+            "fields": Array [
+              "name",
+              "email",
+            ],
+            "onSubmit": [Function],
+            "title": "Add user",
+          }
+        }
+      />
+      <User
+        key="id"
+        user={
+          Object {
+            "email": "alice@chatter.com",
+            "id": "id",
+            "name": "Alice",
+            "subscriptions": Array [
+              "channel1",
+              "channel2",
+            ],
+          }
+        }
+      />
+    </div>
+    <div>
+      <InputForm
+        inputForm={
+          Object {
+            "fields": Array [
+              "name",
+            ],
+            "onSubmit": [Function],
+            "title": "Add channel",
+          }
+        }
+      />
+      <Channel
+        channel={
+          Object {
+            "id": "id",
+            "name": "Official",
+            "subscribers": Array [
+              "user1",
+              "user2",
+            ],
+          }
+        }
+        key="id"
+      />
+    </div>
+  </div>
 </div>
 `;

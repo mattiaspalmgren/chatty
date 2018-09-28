@@ -8,8 +8,7 @@ exports[`render user shallow correctly 1`] = `
     Alice
   </h2>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula arcu, mollis at consectetur sit amet, porta gravida ligula. Aenean pellentesque lobortis urna.
+    alice@chatter.com
   </p>
-  <Button />
 </div>
 `;

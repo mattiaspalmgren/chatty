@@ -2,13 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import User from './User.js';
 
+import state from '../../state.js';
+
 it('render user shallow correctly', () => {
-  const user = {
-    name: "Alice",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-    " Donec ligula arcu, mollis at consectetur sit amet, porta gravida" +
-    " ligula. Aenean pellentesque lobortis urna."
-  };
-  const component = shallow(<User user={user} />);
+  const component = shallow(<User user={state.users[0]} />);
   expect(component).toMatchSnapshot();
 });

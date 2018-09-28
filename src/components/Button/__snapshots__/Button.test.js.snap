@@ -3,9 +3,5 @@
 exports[`Button changes class when hovered 1`] = `
 <button
   className="Button"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  Send
-</button>
+/>
 `;
