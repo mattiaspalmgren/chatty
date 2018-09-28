@@ -1,5 +1,12 @@
 .User {
     composes: padding-medium from "../../common/layout.css";
     border: 1px solid gainsboro;
-    width: 30%;
+}
+
+h2 {
+    margin: 0;
+}
+
+b {
+    margin-bottom: 1px;
 }

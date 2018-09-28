@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import App from "./components/App/App.js";
 
 const user = {
+    id: "id",
     name: "Alice",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-    " Donec ligula arcu, mollis at consectetur sit amet, porta gravida" +
-    " ligula. Aenean pellentesque lobortis urna."
-};
+    email: "alice@chatter.com",
+    subscriptions: ["channel1", "channel2"]
+}
 
 ReactDOM.render(<App user={user} />, document.getElementById("root"));

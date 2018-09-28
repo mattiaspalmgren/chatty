@@ -1,14 +1,19 @@
 import React from "react";
 
-import Button from "../Button/Button.js";
+import types from "../../types/index.js";
 import style from "./User.css";
 
-const User = ({ user }) => (
-    <div className={style.User}>
-        <h2>{user.name}</h2>
-        <p>{user.text}</p>
-        <Button/>
-    </div>
-);
+const User = ({ user }) => {
+    return (
+        <div className={style.User}>
+            <h2>{user.name}</h2>
+            <p>{user.email}</p>
+        </div>
+    );
+};
+
+User.propTypes = {
+    user: types.UserType.isRequired
+};
 
 export default User;

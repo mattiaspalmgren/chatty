@@ -1,17 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { actions } from '@storybook/addon-actions';
 
 import User from './User.js';
 
-const eventsFromObject = actions({ onMouseOver: 'hovered' });
-
-const user = {
+const dummyUser = {
+    id: "id",
     name: "Alice",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-    " Donec ligula arcu, mollis at consectetur sit amet, porta gravida" +
-    " ligula. Aenean pellentesque lobortis urna."
-};
+    email: "alice@chatter.com",
+    subscriptions: ["channel1", "channel2"]
+}
 
 storiesOf('User', module)
-  .add('with text', () => <User user={user}></User>)
+  .add('with user', () => <User user={dummyUser}></User>)
