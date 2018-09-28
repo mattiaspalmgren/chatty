@@ -1,6 +1,7 @@
 :root {
     --small-spacing: 10px;
     --medium-spacing: 20px;
+    --width: 960px;
 }
 
 /* Padding */
@@ -26,5 +27,14 @@
 }
 
 .margin-bottom-small {
-    margin: 0 0 var(--small-spacing) 0;
+    margin-bottom: var(--small-spacing);
+}
+
+.margin-top-small {
+    margin-top: var(--small-spacing);
+}
+
+.wrapper-width {
+    margin: auto;
+    width: var(--width);
 }

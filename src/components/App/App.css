@@ -1,7 +1,7 @@
 @import "../../common/border.css";
 
 .App {
-    composes: padding-medium from "../../common/layout.css";
+    composes: padding-medium wrapper-width from "../../common/layout.css";
     composes: serif from "../../common/typography.css";
     border: var(--dark-border);
 }
