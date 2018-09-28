@@ -1,0 +1,16 @@
+@import "./layout.css";
+
+.grid {
+    display: grid;
+    grid-gap: var(--small-spacing);
+}
+
+.gridRows {
+    composes: grid;
+    grid-template-rows: 1fr;
+}
+
+.gridColumns {
+    composes: grid;
+    grid-template-columns: 1fr 1fr;
+}

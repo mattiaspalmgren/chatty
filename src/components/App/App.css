@@ -1,6 +1,7 @@
+@import "../../common/border.css";
+
 .App {
-    composes: border from '../../common/border.css';
     composes: padding-medium from "../../common/layout.css";
-    margin: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+    composes: serif from "../../common/typography.css";
+    border: var(--dark-border);
 }
