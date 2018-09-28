@@ -1,10 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { actions } from '@storybook/addon-actions';
 
 import InputForm from './InputForm.js';
 
-const eventsFromObject = actions({ onMouseOver: 'hovered' });
+const dummyInputFormUser = {
+  title: "Add user",
+  fields: ["name", "email"],
+  onSubmit: () => console.log("submit")
+}
+
+const dummyInputFormChannel = {
+  title: "Add channel",
+  fields: ["name"],
+  onSubmit: () => console.log("submit")
+}
 
 storiesOf('InputForm', module)
-  .add('inital state', () => <InputForm></InputForm>)
+  .add('user input', () => <InputForm inputForm={dummyInputFormUser}></InputForm>)
+  .add('channel input', () => <InputForm inputForm={dummyInputFormChannel}></InputForm>)

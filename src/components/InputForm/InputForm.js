@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button.js';
 
+import type from '../../types/index.js';
 import style from './InputForm.css';
 
-class InputForm extends Component {
-    render() {
-        return (
-            <form className={style.form}>
-                <input className={style.field} type="text" name="name" placeholder="name"></input>
-                <input className={style.field} type="text" name="email" placeholder="email"></input>
-                <Button text="Submit"></Button>
-            </form>
-        );
-    }
-}
+const InputForm = ({ inputForm }) => (
+    <form className={style.form}>
+        <h2 className={style.title}>{inputForm.title}</h2>
+        {
+            inputForm.fields.map(field => (
+                <input key={field} className={style.field} type="text" name={field} placeholder={field}></input>
+            ))
+        }
+        <Button text="Submit"></Button>
+    </form>
+);
+
+InputForm.propType = {
+    inputForm: type.InputForm
+};
 
 export default InputForm;

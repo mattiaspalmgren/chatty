@@ -1,4 +1,4 @@
-import { shape, string, arrayOf} from 'prop-types';
+import { shape, string, arrayOf, func } from 'prop-types';
 
 const UserType = shape({
     id: string.isRequired,
@@ -13,4 +13,10 @@ const ChannelType = shape({
     subscribers: arrayOf(string).isRequired
 });
 
-export default { UserType, ChannelType };
+const InputForm = shape({
+    title: string.isRequired,
+    fields: arrayOf(string).isRequired,
+    onSubmit: func.isRequired
+});
+
+export default { UserType, ChannelType, InputForm };

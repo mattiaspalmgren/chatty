@@ -10,3 +10,7 @@
 .field {
     composes: margin-bottom-small padding-small from "../../common/layout.css";
 }
+
+.title {
+    composes: margin-bottom-small from "../../common/layout.css";
+}
