@@ -7,4 +7,10 @@ const UserType = shape({
     subscriptions: arrayOf(string).isRequired
 });
 
-export default UserType;
+const ChannelType = shape({
+    id: string.isRequired,
+    name: string.isRequired,
+    subscribers: arrayOf(string).isRequired
+});
+
+export default { UserType, ChannelType };

@@ -1,0 +1,8 @@
+.Channel {
+    composes: padding-medium from "../../common/layout.css";
+    border: 1px solid gainsboro;
+}
+
+h2 {
+    margin: 0;
+}

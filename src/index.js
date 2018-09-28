@@ -9,4 +9,10 @@ const user = {
     subscriptions: ["channel1", "channel2"]
 }
 
-ReactDOM.render(<App user={user} />, document.getElementById("root"));
+const channel = {
+    id: "id",
+    name: "Official",
+    subscribers: ["user1", "user2"]
+}
+
+ReactDOM.render(<App user={user} channel={channel} />, document.getElementById("root"));
