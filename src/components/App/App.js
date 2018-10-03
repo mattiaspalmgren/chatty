@@ -1,16 +1,18 @@
 import React from "react";
 import { hot } from "react-hot-loader";
-
 import gridStyle from "../../common/grid.css";
 import style from "./App.css";
-
-import UserContainer from "../../containers/UserContainer";
+import UserForm from "../../containers/UserForm";
+import UserList from "../../containers/UserList";
 
 const App = () => (
     <div className={style.App}>
       <h1>Chatty</h1>
       <div className={gridStyle.gridColumns}>
-        <UserContainer/>
+        <div>
+          <UserForm/>
+          <UserList/>
+        </div>
       </div>
     </div>
 )
