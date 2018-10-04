@@ -1,16 +1,16 @@
-import { shape, string, arrayOf } from 'prop-types';
+import PropTypes from 'prop-types';
 
-const UserType = shape({
-    id: string.isRequired,
-    name: string.isRequired,
-    email: string.isRequired,
-    subscriptions: arrayOf(string).isRequired
+const UserType = PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    subscriptions: PropTypes.arrayOf(PropTypes.string)
 });
 
-const ChannelType = shape({
-    id: string.isRequired,
-    name: string.isRequired,
-    subscribers: arrayOf(string).isRequired
+const ChannelType = PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    subscribers: PropTypes.arrayOf(PropTypes.string)
 });
 
 export default { UserType, ChannelType };
