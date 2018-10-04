@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Form from "../components/Form/Form.js";
-import { submitUserForm } from "../actions/index.js";
+import { addUser } from "../actions/index.js";
 
 const mapDispatchToProps = dispatch => ({
-    submitUserForm: user => dispatch(submitUserForm(user))
+    addUser: user => dispatch(addUser(user))
 })
 
 const mapStateToProps = state => {
@@ -14,13 +14,12 @@ const mapStateToProps = state => {
 
 class UserForm extends Component {
     render() {
-        const { submitUserForm, status } = this.props;
+        const { addUser } = this.props;
         return (
             <Form
                 title="Add user"
                 fields={["name", "email"]}
-                onSubmit={submitUserForm}
-                status={status}
+                onSubmit={addUser}
             />
        );
     }
