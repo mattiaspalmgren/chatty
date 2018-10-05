@@ -8,12 +8,12 @@ const user = {
     name: "Alice",
     email: "alice@chatter.com",
     subscriptions: []
-}
+};
+
+export const initialState = { users: [user] };
 
 export default function users(
-    state = {
-        users: [user]
-    },
+    state = initialState,
     action
   ) {
   switch (action.type) {
@@ -22,7 +22,7 @@ export default function users(
     case ADD_USER_SUCCESS:
       return Object.assign({}, state, {
         users: state.users.concat([action.payload])
-      })
+      });
     default:
       return state;
   }
