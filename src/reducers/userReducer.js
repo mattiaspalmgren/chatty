@@ -1,7 +1,7 @@
 import {
   ADD_USER_REQUEST,
   ADD_USER_SUCCESS
- } from "../actions";
+ } from "../actions/userActions.js";
 
 const user = {
     id: "id",
@@ -10,7 +10,7 @@ const user = {
     subscriptions: []
 }
 
-export function users(
+export default function users(
     state = {
         users: [user]
     },
@@ -21,7 +21,7 @@ export function users(
       return state;
     case ADD_USER_SUCCESS:
       return Object.assign({}, state, {
-        users: state.users.concat([action.user])
+        users: state.users.concat([action.payload])
       })
     default:
       return state;

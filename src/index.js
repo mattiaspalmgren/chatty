@@ -2,13 +2,17 @@ import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import thunkMiddleware from 'redux-thunk'
+import users from "./reducers/userReducer.js"
+import apiMiddleware from "./middleware/apiMiddleware";
+import loggingMiddleware from "./middleware/loggingMiddleware";
 import App from "./components/App/App.js";
-import { users } from "./reducers/index.js"
 
 const store = createStore(
     users,
-    applyMiddleware(thunkMiddleware)
+    applyMiddleware(
+        apiMiddleware,
+        loggingMiddleware
+    )
 );
 
 render(
