@@ -1,14 +1,13 @@
-const PORT = '8080'
+const PORT = '8080';
 const API_ROOT = `http://localhost:${PORT}`;
-const USER_URL = '/admin/users/';
+export const USER_URL = `${API_ROOT}/admin/users/`;
 const postUser = (payload) => fetch(
-    `${API_ROOT}${USER_URL}`,
+    USER_URL,
     {
         method: 'POST',
         body: JSON.stringify(payload),
-        headers: new Headers({'content-type': 'application/json'})
+        headers: {'Content-Type': 'application/json'}
     }).then(res => res.json());
 
 const chatter = { postUser };
 export default chatter;
-
