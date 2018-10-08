@@ -1,5 +1,4 @@
-const PORT = '8080';
-const API_ROOT = `http://localhost:${PORT}`;
+const API_ROOT = env.CHATTER_API_URL;
 export const USER_URL = `${API_ROOT}/admin/users/`;
 const postUser = (payload) => fetch(
     USER_URL,

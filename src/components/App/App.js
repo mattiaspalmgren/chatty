@@ -1,5 +1,4 @@
 import React from "react";
-import { hot } from "react-hot-loader";
 import gridStyle from "../../common/grid.css";
 import style from "./App.css";
 import UserForm from "../../containers/UserForm";
@@ -15,6 +14,6 @@ const App = () => (
         </div>
       </div>
     </div>
-)
+);
 
-export default hot(module)(App);
+export default App;

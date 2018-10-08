@@ -1,5 +1,6 @@
 const path = require("path");
-const webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { DefinePlugin } = require('webpack');
 
 const jsLoader = {
     test: /\.(js|jsx)$/,
@@ -24,26 +25,27 @@ const cssLoader = {
           ]
 };
 
-module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
-  module: {
-    rules: [
-      jsLoader,
-      cssLoader
-    ]
-  },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
-  output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
-    filename: "bundle.js"
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+module.exports = env => {
+    return {
+        entry: "./src/index.js",
+        module: {
+            rules: [
+                jsLoader,
+                cssLoader
+            ]
+        },
+        resolve: { extensions: ["*", ".js", ".jsx"] },
+        output: {
+            path: path.resolve(__dirname, "dist/"),
+            filename: "bundle.js"
+        },
+        devServer: {
+            contentBase: path.join(__dirname, "dist/"),
+            port: 3000,
+        },
+        plugins: [
+            new HtmlWebpackPlugin({ template: path.join(__dirname, '/src/index.html') }),
+            new DefinePlugin({ 'env.CHATTER_API_URL': JSON.stringify(env.CHATTER_API_URL)})
+        ]
+    }
 };
