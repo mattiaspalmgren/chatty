@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Button from '../Button/Button.js';
 import style from './Form.css';
 
+import { FormType } from "../../types/FormType";
+
 class Form extends Component {
     constructor(props) {
         super(props);
@@ -27,8 +29,7 @@ class Form extends Component {
     }
 
     render() {
-        const { title, fields, status } = this.props;
-        const buttonText = status == null ? "Submit" : status;
+        const { title, fields, submitText } = this.props;
         return (
             <form className={style.form} onChange={this.handleChange} onSubmit={this.handleSubmit}>
                 <h2 className={style.title}>{title}</h2>
@@ -37,10 +38,12 @@ class Form extends Component {
                         <input key={field} className={style.field} type="text" name={field} placeholder={field}/>
                     )
                 }
-                <Button text={buttonText}/>
+                <Button text={submitText}/>
             </form>
         );
     }
 }
+
+Form.propType = FormType;
 
 export default Form;

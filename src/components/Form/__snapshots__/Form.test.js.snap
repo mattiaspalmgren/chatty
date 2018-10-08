@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match its snapshot 1`] = `
+<form
+  className="form"
+  onChange={[Function]}
+  onSubmit={[Function]}
+>
+  <h2
+    className="title"
+  >
+    Test
+  </h2>
+  <input
+    className="field"
+    key="Test1"
+    name="Test1"
+    placeholder="Test1"
+    type="text"
+  />
+  <input
+    className="field"
+    key="Test1"
+    name="Test1"
+    placeholder="Test1"
+    type="text"
+  />
+  <Button
+    text="text"
+  />
+</form>
+`;

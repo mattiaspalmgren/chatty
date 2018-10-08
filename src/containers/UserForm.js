@@ -20,6 +20,7 @@ class UserForm extends Component {
                 title="Add user"
                 fields={["name", "email"]}
                 onSubmit={addUser}
+                submitText={"Submit"}
             />
        );
     }
