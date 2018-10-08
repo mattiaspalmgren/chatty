@@ -1,6 +1,6 @@
 import React from 'react';
 
-import types from '../../types/index.js';
+import { ChannelType } from '../../types/ChannelType.js';
 import style from './Channel.css'
 
 const Channel = ({ channel }) => {
@@ -12,7 +12,7 @@ const Channel = ({ channel }) => {
 };
 
 Channel.propTypes = {
-    channel: types.ChannelType.isRequired
+    channel: ChannelType.isRequired
 };
 
 export default Channel;

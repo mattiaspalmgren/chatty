@@ -1,6 +1,6 @@
 import React from "react";
 
-import types from "../../types/index.js";
+import { UserType } from "../../types/UserType.js";
 import style from "./User.css";
 
 const User = ({ user }) => {
@@ -13,7 +13,7 @@ const User = ({ user }) => {
 };
 
 User.propTypes = {
-    user: types.UserType.isRequired
+    user: UserType.isRequired
 };
 
 export default User;

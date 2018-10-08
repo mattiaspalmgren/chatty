@@ -5,12 +5,12 @@ import { addUser } from "../actions/userActions.js";
 
 const mapDispatchToProps = dispatch => ({
     addUser: user => dispatch(addUser(user))
-})
+});
 
 const mapStateToProps = state => {
     const { status } = state;
     return { status };
-}
+};
 
 class UserForm extends Component {
     render() {

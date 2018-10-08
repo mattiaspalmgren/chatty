@@ -5,7 +5,7 @@ import User from "../components/User/User.js";
 const mapStateToProps = state => {
     const { users } = state;
     return { users };
-}
+};
 
 class UserList extends Component {
     render() {
