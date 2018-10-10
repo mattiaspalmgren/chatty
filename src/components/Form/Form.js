@@ -29,7 +29,7 @@ class Form extends Component {
     }
 
     render() {
-        const { title, fields, submitText } = this.props;
+        const { title, fields, submitText, loading, error } = this.props;
         return (
             <form className={style.form} onChange={this.handleChange} onSubmit={this.handleSubmit}>
                 <h2 className={style.title}>{title}</h2>
@@ -38,7 +38,7 @@ class Form extends Component {
                         <input key={field} className={style.field} type="text" name={field} placeholder={field}/>
                     )
                 }
-                <Button text={submitText}/>
+                <Button text={submitText} loading={loading} error={error}/>
             </form>
         );
     }

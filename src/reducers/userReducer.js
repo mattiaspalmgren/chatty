@@ -2,6 +2,7 @@ import {
   ADD_USER_REQUEST,
   ADD_USER_SUCCESS
  } from "../actions/userActions.js";
+import { ADD_USER_ERROR } from "../actions/userActions";
 
 const user = {
     id: "id",
@@ -10,7 +11,10 @@ const user = {
     subscriptions: []
 };
 
-export const initialState = [user];
+export const initialState = {
+    users: [user],
+    loading: false
+};
 
 export default function users(
     state = initialState,
@@ -18,9 +22,21 @@ export default function users(
   ) {
   switch (action.type) {
     case ADD_USER_REQUEST:
-      return state;
+      return {
+          users: state.users,
+          loading: true
+      };
     case ADD_USER_SUCCESS:
-      return state.concat([action.payload]);
+      return {
+          users: state.users.concat([action.payload]),
+          loading: false
+      };
+    case ADD_USER_ERROR:
+      return {
+          ...state,
+          error: true,
+          loading: false
+      };
     default:
       return state;
   }

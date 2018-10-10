@@ -3,15 +3,28 @@ const apiMiddleware = () => next => action => {
     if (typeof callApi === 'undefined') {
         return next(action);
     }
-    const [ pendingType, successType ] = action.types;
+    const [ pendingType, successType, errorType ] = action.types;
     next({type: pendingType});
     return callApi()
-        .then(obj => {
+        .then(handleErrors)
+        .then(res => {
             next({
                 type: successType,
-                payload: obj
+                payload: res
             })
         })
-}
+        .catch(() => {
+            next({
+                type: errorType,
+            })
+    });
+};
+
+const handleErrors = (res) => {
+    if (!res.ok) {
+        throw Error(res.statusText);
+    }
+    return res.json(res);
+};
 
 export default apiMiddleware;

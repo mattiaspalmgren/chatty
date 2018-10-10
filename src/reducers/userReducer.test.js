@@ -13,6 +13,19 @@ describe('user reducer', () => {
         expect(reducer(undefined, {})).toEqual(initialState);
     });
 
+    it('should handle ADD_USER_REQUEST', () => {
+        expect(
+            reducer(initialState,
+                {
+                    type: actions.ADD_USER_REQUEST,
+                }
+            )
+        ).toEqual({
+            users: initialState.users,
+            loading: true
+        });
+    });
+
     it('should handle ADD_USER_SUCCESS', () => {
         expect(
             reducer(initialState,
@@ -21,6 +34,23 @@ describe('user reducer', () => {
                     payload: user
                 }
             )
-        ).toEqual(initialState.concat([user]));
-    })
+        ).toEqual({
+            users: initialState.users.concat([user]),
+            loading: false
+        });
+    });
+
+    it('should handle ADD_USER_ERROR', () => {
+        expect(
+            reducer(initialState,
+                {
+                    type: actions.ADD_USER_ERROR,
+                }
+            )
+        ).toEqual({
+            ...initialState,
+            error: true,
+            loading: false
+        });
+    });
 });

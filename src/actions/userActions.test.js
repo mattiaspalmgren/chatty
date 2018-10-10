@@ -19,15 +19,28 @@ describe('async actions', () => {
     };
 
     it('creates ADD_USER_SUCCESS when posting user has been done', () => {
-      fetchMock.postOnce(USER_URL, user );
+        fetchMock.postOnce(USER_URL, user);
 
-    const expectedActions = [
-        { type: actions.ADD_USER_REQUEST},
-        { type: actions.ADD_USER_SUCCESS, payload: user }
-    ];
-    const store = mockStore();
-    store.dispatch(actions.addUser(user)).then(() => {
-        expect(store.getActions()).toEqual(expectedActions)
-    })
-  })
+        const expectedActions = [
+            { type: actions.ADD_USER_REQUEST },
+            { type: actions.ADD_USER_SUCCESS, payload: user }
+        ];
+        const store = mockStore();
+        store.dispatch(actions.addUser(user)).then(() => {
+            expect(store.getActions()).toEqual(expectedActions)
+        })
+    });
+
+    it('dispatch ADD_USER_ERROR on failure', () => {
+        fetchMock.postOnce(USER_URL, 500);
+
+        const expectedActions = [
+            { type: actions.ADD_USER_REQUEST },
+            { type: actions.ADD_USER_ERROR }
+        ];
+        const store = mockStore();
+        store.dispatch(actions.addUser(user)).then(() => {
+            expect(store.getActions()).toEqual(expectedActions)
+        })
+    });
 });

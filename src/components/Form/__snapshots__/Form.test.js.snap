@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Form should match error state snapshot 1`] = `
+<form
+  className="form"
+  onChange={[Function]}
+  onSubmit={[Function]}
+>
+  <h2
+    className="title"
+  >
+    Test
+  </h2>
+  <input
+    className="field"
+    key="Test1"
+    name="Test1"
+    placeholder="Test1"
+    type="text"
+  />
+  <input
+    className="field"
+    key="Test1"
+    name="Test1"
+    placeholder="Test1"
+    type="text"
+  />
+  <Button
+    error={true}
+    text="text"
+  />
+</form>
+`;
+
 exports[`Form should match its snapshot 1`] = `
 <form
   className="form"
@@ -26,6 +58,38 @@ exports[`Form should match its snapshot 1`] = `
     type="text"
   />
   <Button
+    text="text"
+  />
+</form>
+`;
+
+exports[`Form should match loading state snapshot 1`] = `
+<form
+  className="form"
+  onChange={[Function]}
+  onSubmit={[Function]}
+>
+  <h2
+    className="title"
+  >
+    Test
+  </h2>
+  <input
+    className="field"
+    key="Test1"
+    name="Test1"
+    placeholder="Test1"
+    type="text"
+  />
+  <input
+    className="field"
+    key="Test1"
+    name="Test1"
+    placeholder="Test1"
+    type="text"
+  />
+  <Button
+    loading={true}
     text="text"
   />
 </form>

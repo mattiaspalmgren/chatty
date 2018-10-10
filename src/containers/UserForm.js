@@ -8,19 +8,21 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => {
-    const { status } = state;
-    return { status };
+    const { users: { loading, error } } = state;
+    return { loading, error };
 };
 
 class UserForm extends Component {
     render() {
-        const { addUser } = this.props;
+        const { addUser, loading, error } = this.props;
         return (
             <Form
                 title="Add user"
                 fields={["name", "email"]}
                 onSubmit={addUser}
                 submitText={"Submit"}
+                loading={loading}
+                error={error}
             />
        );
     }

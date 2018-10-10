@@ -9,10 +9,22 @@ describe('Form', () => {
         submitText: 'text',
         onSubmit: jest.fn()
     };
+
     it('should match its snapshot', () => {
         const component = shallow(<Form {...FormProps}/>);
         expect(component).toMatchSnapshot();
     });
+
+    it('should match error state snapshot', () => {
+        const component = shallow(<Form {...FormProps} error={true} />);
+        expect(component).toMatchSnapshot();
+    });
+
+    it('should match loading state snapshot', () => {
+        const component = shallow(<Form {...FormProps} loading={true}/>);
+        expect(component).toMatchSnapshot();
+    });
+
     it('should submit', () => {
         const component = shallow(<Form {...FormProps}/>);
         const preventDefault = jest.fn();

@@ -12,6 +12,19 @@ describe('channel reducer', () => {
         expect(reducer(undefined, {})).toEqual(initialState);
     });
 
+    it('should handle ADD_CHANNEL_REQUEST', () => {
+        expect(
+            reducer(initialState,
+                {
+                    type: actions.ADD_CHANNEL_REQUEST,
+                }
+            )
+        ).toEqual({
+            channels: initialState.channels,
+            loading: true
+        });
+    });
+
     it('should handle ADD_CHANNEL_SUCCESS', () => {
         expect(
             reducer(initialState,
@@ -20,6 +33,23 @@ describe('channel reducer', () => {
                     payload: channel
                 }
             )
-        ).toEqual(initialState.concat(channel));
-    })
+        ).toEqual({
+            channels: initialState.channels.concat(channel),
+            loading: false
+        });
+    });
+
+    it('should handle ADD_CHANNEL_ERROR', () => {
+        expect(
+            reducer(initialState,
+                {
+                    type: actions.ADD_CHANNEL_ERROR,
+                }
+            )
+        ).toEqual({
+            ...initialState,
+            error: true,
+            loading: false
+        });
+    });
 });

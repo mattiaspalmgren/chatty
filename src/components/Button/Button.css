@@ -9,6 +9,9 @@
 }
 
 .error {
-    composes: Button;
     background-color: var(--error);
+}
+
+.loading {
+    background-color: var(--loading) ;
 }

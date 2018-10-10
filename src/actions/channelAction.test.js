@@ -31,4 +31,17 @@ describe('async actions', () => {
             expect(store.getActions()).toEqual(expectedActions)
         })
     })
+
+    it('dispatch ADD_CHANNEL_ERROR on failure', () => {
+        fetchMock.postOnce(CHANNEL_URL, 500);
+
+        const expectedActions = [
+            { type: actions.ADD_CHANNEL_REQUEST },
+            { type: actions.ADD_CHANNEL_ERROR }
+        ];
+        const store = mockStore();
+        store.dispatch(actions.addChannel(channel)).then(() => {
+            expect(store.getActions()).toEqual(expectedActions)
+        })
+    });
 });

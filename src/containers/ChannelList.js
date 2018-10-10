@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import List from "../components/List/List";
 
 function mapStateToProps(state) {
-    const { channels } = state;
+    const { channels: { channels } } = state;
     return { channels };
 }
 

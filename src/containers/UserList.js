@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import List from "../components/List/List";
 
 const mapStateToProps = state => {
-    const { users } = state;
+    const { users: { users } } = state;
     return { users };
 };
 
