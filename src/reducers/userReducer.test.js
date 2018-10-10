@@ -21,9 +21,6 @@ describe('user reducer', () => {
                     payload: user
                 }
             )
-        ).toEqual({
-            ...initialState,
-            users: [...initialState.users, user]
-        });
+        ).toEqual(initialState.concat([user]));
     })
 });

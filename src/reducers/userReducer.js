@@ -10,7 +10,7 @@ const user = {
     subscriptions: []
 };
 
-export const initialState = { users: [user] };
+export const initialState = [user];
 
 export default function users(
     state = initialState,
@@ -20,9 +20,7 @@ export default function users(
     case ADD_USER_REQUEST:
       return state;
     case ADD_USER_SUCCESS:
-      return Object.assign({}, state, {
-        users: state.users.concat([action.payload])
-      });
+      return state.concat([action.payload]);
     default:
       return state;
   }
