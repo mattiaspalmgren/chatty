@@ -1,8 +1,12 @@
-.Channel {
+.ListItem {
     composes: margin-top-small padding-medium from "../../common/layout.css";
     border: 1px solid gainsboro;
 }
 
 h2 {
     margin: 0;
+}
+
+b {
+    margin-bottom: 1px;
 }

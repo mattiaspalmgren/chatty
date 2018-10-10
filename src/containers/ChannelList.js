@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Channel from '../components/Channel/Channel';
+import List from "../components/List/List";
 
 function mapStateToProps(state) {
     const { channels } = state;
@@ -10,11 +10,10 @@ function mapStateToProps(state) {
 class ChannelList extends Component {
     render() {
         const { channels } = this.props;
+        const items = channels.map(channel => ({ id: channel.id, title: channel.name }));
         return (
             <div>
-                {
-                    channels.map(channel => <Channel key={channel.id} channel={channel}></Channel>)
-                }
+                <List items={items}/>
             </div>
         );
     }

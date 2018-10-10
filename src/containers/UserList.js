@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import User from "../components/User/User.js";
+import List from "../components/List/List";
 
 const mapStateToProps = state => {
     const { users } = state;
@@ -10,13 +10,12 @@ const mapStateToProps = state => {
 class UserList extends Component {
     render() {
         const { users } = this.props;
+        const items = users.map(user => ({ id: user.id, title: user.name, fields: [user.email]}));
         return (
             <div>
-                {
-                    users.map(user => <User key={user.id} user={user}></User>)
-                }
+                <List items={items}/>
             </div>
-       );
+        );
     }
 }
 

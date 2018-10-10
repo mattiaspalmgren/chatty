@@ -1,0 +1,3 @@
+.List {
+    composes: serif from "../../common/typography.css";
+}
