@@ -8,5 +8,14 @@ const postUser = (payload) => fetch(
         headers: {'Content-Type': 'application/json'}
     }).then(res => res.json());
 
-const chatter = { postUser };
+export const CHANNEL_URL = `${API_ROOT}/admin/channels/`;
+const postChannel = (payload) => fetch(
+    CHANNEL_URL,
+    {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json());
+
+const chatter = { postUser, postChannel };
 export default chatter;
